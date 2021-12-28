@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('name', 50);
             $table->string('family', 50);
             $table->string('avatar')->nullable();
-            $table->integer('age')->nullable();
+            $table->unsignedInteger('age')->nullable();
             $table->string('number')->nullable();
             $table->string('n_code')->nullable();
             $table->string('city', 50)->nullable();
