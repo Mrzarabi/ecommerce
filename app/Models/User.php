@@ -2,11 +2,12 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Str;
+use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
@@ -19,6 +20,14 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'family',
+        'avatar',
+        'age',
+        'number',
+        'n_code',
+        'city',
+        'address',
+        'post_code',
         'email',
         'password',
     ];
@@ -41,4 +50,24 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // using uuid for each user except id 
+    protected static function boot() 
+    {
+        parent::boot();
+
+        static::creating(function ($user) {
+            $user->{$user->getKeyName()} = (string) Str::uuid();
+        });
+    } 
+
+    public function getIncrementing()
+    {
+        return false;
+    }
+
+    public function getKeyType()
+    {
+        return 'string';
+    }
 }
