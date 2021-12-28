@@ -59,4 +59,20 @@ class Variation extends Model
     {
         return $this->hasMany(Feature::class);
     }
+
+    /**
+     * Get the order items for the blog variation.
+     */
+    public function order_items()
+    {
+        return $this->hasMany(Order_item::class);
+    }
+
+    /**
+     * Get the shop list for the blog variation.
+     */
+    public function shop_list()
+    {
+        return $this->hasMany(shop_list::class);
+    }
 }
