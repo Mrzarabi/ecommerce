@@ -22,9 +22,9 @@ class CreateVariationsTable extends Migration
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 
-            $table->integer('number');
-            $table->integer('unit')->nullable();
-            $table->integer('off')->nullable();
+            $table->unsignedInteger('number');
+            $table->unsignedInteger('unit')->nullable();
+            $table->unsignedInteger('off')->nullable();
             $table->time('off_start')->nullable();
             $table->time('off_end')->nullable();
 
