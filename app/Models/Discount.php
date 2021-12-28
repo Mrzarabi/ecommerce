@@ -44,4 +44,14 @@ class Discount extends Model
         'discount_start' => 'timestamp',
         'discount_end' => 'timestamp', 
     ];
+
+    //* Realtions
+
+    /**
+     * Get the products for the blog discount.
+     */
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
 }

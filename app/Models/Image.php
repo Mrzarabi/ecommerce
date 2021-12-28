@@ -16,7 +16,7 @@ class Image extends Model
      */
     protected $fillable = [
         'product_id',
-        
+
         'name',
     ];
 
@@ -33,4 +33,14 @@ class Image extends Model
      * @var array<string, string>
      */
     protected $casts = [];
+
+    //* Relations
+
+    /**
+     * Get the product that owns the image.
+     */
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
 }

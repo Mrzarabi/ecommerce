@@ -33,4 +33,14 @@ class Category extends Model
      * @var array<string, string>
      */
     protected $casts = [];
+
+    //* Realtions
+
+    /**
+     * Get the products for the blog category.
+     */
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
 }

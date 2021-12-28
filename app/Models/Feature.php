@@ -34,4 +34,14 @@ class Feature extends Model
      * @var array<string, string>
      */
     protected $casts = [];
+    
+    //* Relations
+
+    /**
+     * Get the variation that owns the feature.
+     */
+    public function variation()
+    {
+        return $this->belongsTo(Variation::class);
+    }
 }

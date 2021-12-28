@@ -16,7 +16,7 @@ class Variation extends Model
      */
     protected $fillable = [
         'product_id',
-        
+
         'number',
         'unit',
         'off',
@@ -41,4 +41,22 @@ class Variation extends Model
      * @var array<string, string>
      */
     protected $casts = [];
+
+    //* Relations
+
+    /**
+     * Get the product that owns the variation.
+     */
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
+
+    /**
+     * Get the features for the blog variation.
+     */
+    public function features()
+    {
+        return $this->hasMany(Feature::class);
+    }
 }

@@ -32,4 +32,15 @@ class Brand extends Model
      * @var array<string, string>
      */
     protected $casts = [];
+
+
+    //* Realtions
+
+    /**
+     * Get the products for the blog brand.
+     */
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
 }
