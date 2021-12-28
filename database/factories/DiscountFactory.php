@@ -21,8 +21,8 @@ class DiscountFactory extends Factory
             'body' => $this->faker->text,
             'discount_start' => $this->faker->dateTime(),
             'discount_end' => $this->faker->dateTime(),
-            'discount_quantity' => $this->faker->dateTime(),
-            'discount_value' => $this->faker->dateTime(),
+            'discount_quantity' => $this->faker->numberBetween(10, 50),
+            'discount_value' => $this->faker->numberBetween(10, 50),
         ];
     }
 }
