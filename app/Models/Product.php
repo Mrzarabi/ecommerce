@@ -82,4 +82,12 @@ class Product extends Model
     {
         return $this->hasMany(Image::class);
     }
+
+    /**
+     * Get the spec data for the blog product.
+     */
+    public function spec_data()
+    {
+        return $this->hasMany(spec_data::class);
+    }
 }
