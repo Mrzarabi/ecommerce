@@ -54,4 +54,12 @@ class Discount extends Model
     {
         return $this->hasMany(Product::class);
     }
+
+    /**
+     * Get the orders for the blog discount.
+     */
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
 }
