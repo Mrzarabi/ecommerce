@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Discount;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class DiscountFactory extends Factory
@@ -11,6 +12,8 @@ class DiscountFactory extends Factory
      *
      * @return array
      */
+    protected $model = Discount::class;
+
     public function definition()
     {
         return [

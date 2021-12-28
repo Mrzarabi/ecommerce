@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Brand;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class BrandFactory extends Factory
@@ -11,6 +12,8 @@ class BrandFactory extends Factory
      *
      * @return array
      */
+    protected $model = Brand::class;
+
     public function definition()
     {
         return [

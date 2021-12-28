@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Feature;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class FeatureFactory extends Factory
@@ -11,6 +12,8 @@ class FeatureFactory extends Factory
      *
      * @return array
      */
+    protected $model = Feature::class;
+
     public function definition()
     {
         $color = 'رنگ';
@@ -23,7 +26,7 @@ class FeatureFactory extends Factory
 
         return [
             'name' => $color,
-            'value' => $this->str_random($values),
+            'value' => $values[array_rand($values)],
         ];
     }
 }
