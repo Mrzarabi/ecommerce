@@ -70,4 +70,22 @@ class User extends Authenticatable
     {
         return 'string';
     }
+
+    //* Relations
+
+    /**
+     * Get the orders for the blog user.
+     */
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
+
+    /**
+     * Get the shop lists for the blog user.
+     */
+    public function shop_lists()
+    {
+        return $this->hasMany(Shop_list::class);
+    }
 }
