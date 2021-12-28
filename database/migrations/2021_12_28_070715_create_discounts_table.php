@@ -20,8 +20,8 @@ class CreateDiscountsTable extends Migration
             $table->text('body');
             $table->time('discount_start');
             $table->time('discount_end');
-            $table->time('discount_quantity');
-            $table->time('discount_value');
+            $table->unsignedBigInteger('discount_quantity')->default(0);
+            $table->unsignedInteger('discount_value')->default(0);
 
             $table->timestamps();
         });
