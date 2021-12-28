@@ -8,6 +8,9 @@ use App\Models\Discount;
 use App\Models\Feature;
 use App\Models\Image;
 use App\Models\Product;
+use App\Models\Spec;
+use App\Models\Spec_header;
+use App\Models\Spec_row;
 use App\Models\User;
 use App\Models\Variation;
 use Illuminate\Database\Seeder;
@@ -46,6 +49,23 @@ class DatabaseSeeder extends Seeder
                     ]));
                 });
             });
+
+            // $specs = $category->specs()->saveMany(Spec::factory(2)->create([
+            //     'category_id' => $category->id
+            // ]))->each(function($spec) use($specs) {
+            //     $spec->spec_headers()->saveMany(Spec_header::factory(2)->create([
+            //         'spec_id' => $spec->id
+            //     ]))->each(function($spec_header) use($specs) {
+            //         $spec_header->spec_rows()->saveMany(Spec_row::factory(5)->create([
+            //             'spec_header_id' => $spec_header->id,
+            //             'spec_id' => $specs->random()->id
+            //         ]))->each(function($spec_row) {
+            //             $spec_row->
+            //         });
+            //     });
+            // });
         });
+
+
     }
 }
