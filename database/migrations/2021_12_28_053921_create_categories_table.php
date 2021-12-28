@@ -17,7 +17,7 @@ class CreateCategoriesTable extends Migration
             $table->id();
 
             $table->string('title', 50);
-            $table->integer('depth');
+            $table->unsignedInteger('depth');
             $table->string('path');
 
             $table->timestamps();
